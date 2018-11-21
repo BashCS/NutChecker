@@ -1,0 +1,25 @@
+* {
+  font-family: "Muli", sans-serif;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.row {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.searchBox {
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+}
+.form {
+  text-align: center;
+}
