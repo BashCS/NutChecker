@@ -29,15 +29,16 @@ app.get("/", (req, res) => {
           .find(query)
           .toArray(function(err, result) {
             if (err) throw err;
+            /*
             let names = [];
             result.forEach(function(item, index) {
               names.push(item["product_name"]);
               console.log(item["product_name"]);
             });
-
+            */
             app.use(express.static("public"));
             res.sendFile(path.join(__dirname + "/public/index.html"));
-            res.json(JSON.stringify(names));
+            res.json(result);
             db.close();
           });
       }
