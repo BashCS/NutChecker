@@ -3,9 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
   button.addEventListener("click", dbRequest);
   function dbRequest(event) {
     event.preventDefault();
+    document.getElementById("results").innerHTML = "";
+    let searchString =
+      "http://localhost:3000/?searchField=" +
+      document.getElementById("input").value;
     let xhr = new XMLHttpRequest();
     console.log(xhr);
-    xhr.open("GET", "http://localhost:3000/?searchField=rewe", true);
+    xhr.open("GET", searchString, true);
     xhr.onload = function() {
       let result = JSON.parse(this.response);
       console.log(result);

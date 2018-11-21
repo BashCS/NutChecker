@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     console.log(req.query.searchField);
     // Defines Regex for the search query
     let query = {};
-    let regString = req.query.searchField;
+    let regString = "^(" + req.query.searchField + ")";
     let regex = new RegExp(regString, "gi");
     query["product_name"] = { $regex: regex };
     console.log(query);
