@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
     event.preventDefault();
     document.getElementById("results").innerHTML = "";
     let searchString =
-      "http://localhost:3000/?searchField=" +
-      document.getElementById("input").value;
+      "http://localhost:5000/?name=" +
+      document.getElementById("inputName").value +
+      "&category=" +
+      document.getElementById("inputCategory").value;
     let xhr = new XMLHttpRequest();
-    console.log(xhr);
+    console.log(searchString);
     xhr.open("GET", searchString, true);
     xhr.onload = function() {
       let result = JSON.parse(this.response);

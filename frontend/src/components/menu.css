@@ -1,0 +1,7 @@
+.menuWrapper {
+  height: 100vh;
+  width: 15%;
+  background-color: aqua;
+  display: inline-block;
+  box-shadow: 2px 2px 4px 4px black;
+}

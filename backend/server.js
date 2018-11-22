@@ -3,16 +3,16 @@ const url = "mongodb://localhost:27017/";
 const express = require("express");
 const app = express();
 const path = require("path");
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 5000;
 
 app.get("/", (req, res) => {
-  if (req.query.searchField) {
+  if (req.query.name) {
     console.log(req.query.searchField);
     // Defines Regex for the search query
     let query = {};
-    let regString = "^(" + req.query.searchField + ")";
+    let regString = "^(" + req.query.name + ")";
     let regex = new RegExp(regString, "gi");
-    query["product_name"] = { $regex: regex };
+    query[req.query.category] = { $regex: regex };
     console.log(query);
 
     // Connects to the Database
@@ -29,16 +29,15 @@ app.get("/", (req, res) => {
           .find(query)
           .toArray(function(err, result) {
             if (err) throw err;
-            /*
-            let names = [];
-            result.forEach(function(item, index) {
-              names.push(item["product_name"]);
-              console.log(item["product_name"]);
-            });
-            */
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header(
+              "Access-Control-Allow-Headers",
+              "Origin, X-Requested-With, Content-Type, Accept"
+            );
             app.use(express.static("public"));
             res.sendFile(path.join(__dirname + "/public/index.html"));
             res.json(result);
+            console.log(result);
             db.close();
           });
       }
@@ -50,5 +49,5 @@ app.get("/", (req, res) => {
   }
 });
 app.listen(PORT, () => {
-  console.log("Listening on port 3000!");
+  console.log("Listening on port " + PORT);
 });
