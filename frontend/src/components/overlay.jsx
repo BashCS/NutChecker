@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./overlay.css";
 
 class Overlay extends Component {
   state = {};
@@ -25,6 +24,7 @@ class Overlay extends Component {
     };
     return (
       <div id="overlayWrapper">
+        <button onClick={this.props.closeOverlayFunc}>Close</button>
         <form>
           <input
             id="inputName"

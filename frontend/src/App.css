@@ -1,7 +1,13 @@
+/* COLORS
+#767676
+#122f5c
+*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
 }
 .App {
   height: 100vh;

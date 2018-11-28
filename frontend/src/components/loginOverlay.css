@@ -1,0 +1,38 @@
+.overlayWrapper {
+  width: 700px;
+  height: 400px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px 4px #646464;
+  border-radius: 4px;
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.OverlayTitle {
+  text-align: center;
+  margin: 10px 0;
+}
+.OverlayCloseButton {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+#loginOverlayForm {
+  margin: 0 auto;
+  width: 300px;
+}
+.overlayWrapper input {
+  width: 100%;
+  margin: 10px auto;
+}
+#overlayLoginButton {
+  display: block;
+  position: relative;
+  width: 100px;
+  margin: auto;
+}
